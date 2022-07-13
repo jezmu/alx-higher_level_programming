@@ -1,0 +1,35 @@
+# test cases for MyList class
+
+>>> MyList = __import__('1-my_list').MyList
+
+# ensure custom list is instance of list
+>>> issubclass(MyList, list)
+True
+
+# empty list
+>>> l = MyList()
+>>> l.print_sorted()
+[]
+
+# one element
+>>> l = MyList()
+>>> l.append(2)
+>>> l.print_sorted()
+[2]
+
+# ints
+>>> l = MyList()
+>>> l.append(1)
+>>> l.append(100)
+>>> l.append(-2)
+>>> l.print_sorted()
+[-2, 1, 100]
+
+# strings
+>>> l = MyList()
+>>> l.append('')
+>>> l.append('a')
+>>> l.append('z')
+>>> l.append('jk')
+>>> l.print_sorted()
+['', 'a', 'jk', 'z']
