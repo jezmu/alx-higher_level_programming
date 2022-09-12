@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# makes all python files in current directory executable
+chmod +x *.py

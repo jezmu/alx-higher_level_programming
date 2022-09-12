@@ -1,17 +1,19 @@
 #!/usr/bin/python3
 """
-Contains the class definition of a State that inherits from
-declarative_base
+Defines City class
 """
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
+from model_state import Base, State
+
 
 Base = declarative_base()
 
 
-class State(Base):
-    """Class implementation of the State object"""
-    __tablename__ = 'states'
-    id = Column(Integer, primary_key=True,
-                nullable=False, unique=True, autoincrement=True)
+class City(Base):
+    """City ORM class"""
+
+    __tablename__ = "cities"
+    id = Column(Integer, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey(State.id), nullable=False)

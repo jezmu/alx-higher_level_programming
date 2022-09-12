@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# initializes virtual environment
+python3 -m venv orm_venv &&
+. ./orm_venv/bin/activate &&
+pip install -r requirements.txt

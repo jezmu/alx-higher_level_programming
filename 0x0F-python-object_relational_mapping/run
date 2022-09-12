@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# runs a given python file
+#############################################################
+# remember to change db name, user and password accordingly #
+#############################################################
+# $1 = script
+# $2 = any other argument
+if [ -z "$1" ]; then
+    echo "Usage: ./run <python-script>"
+fi
+
+DB="" # enter database name
+USER="" # database user
+PASS="" # db user password
+if [ -z "$2" ]; then
+    python3 "$1" "$USER" "$PASS" "$DB"
+else
+    python3 "$1" "$USER" "$PASS" "$DB" "$2"
+fi

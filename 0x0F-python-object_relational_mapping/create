@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# creates a python script with minimalistic boilerplate
+if [ -z "$1" ]; then
+    echo "Usage: ./create <name>"
+    exit 1
+fi
+
+echo -e '#!/usr/bin/python3\n"""\n\n"""' > "$1"
